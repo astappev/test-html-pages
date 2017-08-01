@@ -27,9 +27,9 @@
         </div>
         <div style="padding-left: 20px;">
             <form novalidate class="sample-form">
-                <label>Name: <input type="text" ng-model="user.name" /></label><br />
-                <label>E-mail: <input type="email" ng-model="user.email" /></label><br />
-                <input type="submit" ng-click="update(user)" value="Save" />
+                <label>Name: <input type="text" ng-model="user.name" name="name" /></label><br />
+                <label>E-mail: <input type="email" ng-model="user.email" name="email" /></label><br />
+                <input type="submit" ng-click="update(user)" value="Save" id="submit-form" />
             </form>
             <pre ng-if="!master.email">{{master.name}}</pre>
             <pre ng-if="master.email">{{master.name + ' <' + master.email + '>'}}</pre>
