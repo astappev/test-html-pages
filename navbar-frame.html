@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Cross SDK test</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
+	
+	<style>
+		body {
+			background:#08af90;
+		}
+	
+		.parent {
+			margin-top: 70px;
+			position: absolute; 
+			top: 0px; 
+			left: 0px;
+			right: 0px; 
+			bottom: 0px;
+		}
+
+		iframe {
+			background: white;
+			position:absolute; 
+			width: 100%;
+			height: 100%;
+			border: 0px;
+		}
+	</style>
+</head>
+<body ng-app="htmlPagesApp" ng-controller="myNavbarCtrl">
+    <h1>Applitools Navbar</h1>
+	
+	<div class="parent">
+		<iframe name="mainpage" id="main" src="index.html"></iframe>
+	</div>
+    
+    <script>
+    var app = angular.module("htmlPagesApp", []); 
+    app.controller('myNavbarCtrl', ['$scope', function($scope) {
+      $scope.master = {};
+
+      $scope.update = function(user) {
+        $scope.master = angular.copy(user);
+      };
+    }]);
+    </script>
+</body>
+</html>
